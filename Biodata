@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biodata Diri - Interaktif</title>
+  <style>
+    /* ========== FONT & RESET ========== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #74ebd5 0%, #9face6 100%);
+      transition: background 0.6s ease-in-out, color 0.6s ease-in-out;
+    }
+
+    /* ========== CARD BIODATA ========== */
+    .card {
+      background: white;
+      width: 350px;
+      padding: 25px;
+      border-radius: 20px;
+      box-shadow: 0 15px 25px rgba(0,0,0,0.1);
+      text-align: center;
+      animation: slideUp 1s ease forwards;
+    }
+
+    .card img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 4px solid #74ebd5;
+      margin-bottom: 15px;
+      transition: transform 0.3s;
+    }
+
+    .card img:hover {
+      transform: scale(1.1) rotate(5deg);
+    }
+
+    .card h2 {
+      font-size: 24px;
+      margin-bottom: 5px;
+    }
+
+    .card p {
+      font-size: 15px;
+      margin-bottom: 10px;
+      color: #555;
+    }
+
+    .info {
+      text-align: left;
+      margin-top: 15px;
+    }
+
+    .info p {
+      margin: 8px 0;
+      font-size: 14px;
+    }
+
+    /* ========== BUTTON ========== */
+    .btn {
+      margin-top: 20px;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 12px;
+      background: #74ebd5;
+      color: #333;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .btn:hover {
+      background: #9face6;
+      transform: scale(1.05);
+    }
+
+    /* ========== DARK MODE ========== */
+    body.dark {
+      background: linear-gradient(135deg, #1f1c2c 0%, #928dab 100%);
+      color: #fff;
+    }
+
+    body.dark .card {
+      background: #2b2b3c;
+      color: #fff;
+    }
+
+    body.dark .card img {
+      border-color: #928dab;
+    }
+
+    body.dark .btn {
+      background: #928dab;
+      color: #fff;
+    }
+
+    /* ========== ANIMATION ========== */
+    @keyframes slideUp {
+      0% {
+        transform: translateY(50px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <img src="https://i.pravatar.cc/150?img=12" alt="Foto Profil">
+    <h2>Nama Lengkap</h2>
+    <p>Mahasiswa | Web Developer</p>
+    <div class="info">
+      <p><b>📍 Alamat:</b> Medan, Indonesia</p>
+      <p><b>📧 Email:</b> email@example.com</p>
+      <p><b>📱 Telepon:</b> +62 812-3456-7890</p>
+      <p><b>🎓 Pendidikan:</b> S1 Ilmu Komputer</p>
+    </div>
+    <button class="btn" onclick="toggleTheme()">🌙 Ganti Tema</button>
+  </div>
+
+  <script>
+    // Toggle Dark/Light Mode
+    function toggleTheme() {
+      document.body.classList.toggle("dark");
+    }
+  </script>
+</body>
+</html>
